@@ -165,6 +165,22 @@ body {
   z-index: 1500;
 }
 
+
 .bd-mode-toggle .dropdown-menu .active .bi {
   display: block !important;
+}
+
+.btn-secondary {
+  background-color: #28a745 !important; /* สีเขียว */
+  border-color: #28a745 !important; /* สีเขียว */
+}
+
+.btn-secondary:hover {
+  background-color: #218838 !important; /* สีเขียวเข้มเมื่อ Hover */
+  border-color: #1e7e34 !important; /* สีเขียวเข้มเมื่อ Hover */
+}
+
+body,
+#navbar-placeholde {
+    font-family: 'Noto Sans Thai', 'Roboto', sans-serif;
 }

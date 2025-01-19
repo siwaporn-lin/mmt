@@ -17,41 +17,89 @@
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
 
+    <!-- Custom Font styles  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:wght@100..900&display=swap"
         rel="stylesheet">
-
-    <style>
-        body,
-        #navbar-placeholde {
-            font-family: 'Noto Sans Thai', 'Roboto', sans-serif;
-        }
-    </style>
-
-
 </head>
 
 <body>
     <div id="navbar-placeholder"></div>
-    <div>
-        <p></p>
-        <h1 class="text-center"> Teacher </p>
-    </div>
+    <div class="container marketing">
 
-    <script>
-        // โหลด Navbar จากไฟล์ navbar.html
-        fetch('navbar.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-    </script>
+        <!-- Three columns of text below the carousel -->
+        <h1 class="text-center">อาจารย์ประจำสาขาวิชา</h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="img/napong.jpg" alt="ผศ.ดร.ณพงศ์ วรรณพิรุณ" class="bd-placeholder-img rounded-circle"
+                    width="140" height="140">
+                <h2 class="fw-normal">ผศ.ดร.ณพงศ์ วรรณพิรุณ</h2>
+                <h5>ตำแหน่ง หัวหน้าสาขาวิชา<h5>
+                        <p><a class="btn btn-secondary" href="#">ผลงานวิจัย &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img src="img/sorachai.jpg" alt="ผศ.ดร.สรชัย ชวรางกูร" class="bd-placeholder-img rounded-circle"
+                    width="140" height="140">
+                <h2 class="fw-normal">ผศ.ดร.สรชัย ชวรางกูร</h2>
+                <h5>ตำแหน่ง อาจารย์ประจำหลักสูตร<h5>
+                        <p><a class="btn btn-secondary"
+                                href="https://scholar.google.com/citations?user=Hn0VgS0AAAAJ&hl=th&oi=ao">ผลงานวิจัย
+                                &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img src="img/chatchada.jpg" alt="ผศ.ดร.สรชัย ชวรางกูร" class="bd-placeholder-img rounded-circle"
+                    width="140" height="140">
+                <h2 class="fw-normal">ผศ.ชัชฎา ชวรางกูร</h2>
+                <h5>ตำแหน่ง อาจารย์ประจำหลักสูตร<h5>
+                        <p><a class="btn btn-secondary" href="#">ผลงานวิจัย &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img src="img/athit.jpg" alt="ผศ.ดร.สรชัย ชวรางกูร" class="bd-placeholder-img rounded-circle"
+                    width="140" height="140">
+                <h2 class="fw-normal">ผศ.อธิษฐ์ คู่เจริญถาวร</h2>
+                <h5>ตำแหน่ง อาจารย์ประจำหลักสูตร<h5>
+                        <p><a class="btn btn-secondary" href="#">ผลงานวิจัย &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img src="img/Profile siwaporn.jpg" alt="ผศ.ดร.สรชัย ชวรางกูร" class="bd-placeholder-img rounded-circle"
+                    width="140" height="140">
+                <h2 class="fw-normal">ดร.ศิวพร ลินทะลึก</h2>
+                <h5>ตำแหน่ง อาจารย์พิเศษ<h5>
+                        <p><a class="btn btn-secondary"
+                                href="https://scholar.google.co.th/citations?user=DufUcJUAAAAJ&hl=en">ผลงานวิจัย
+                                &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+
+        </div><!-- /.row -->
+
+
+        <script>
+            // โหลด Navbar จากไฟล์ navbar.html
+            fetch('navbar.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+
+                    // ตรวจสอบ URL ปัจจุบันและตั้ง active ให้ลิงก์ที่ตรงกัน
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    const currentPath = window.location.pathname.split('/').pop();
+
+                    navLinks.forEach(link => {
+                        const linkPath = link.getAttribute('href');
+                        if (linkPath === currentPath) {
+                            link.classList.add('active'); // เพิ่ม class active ให้กับลิงก์ปัจจุบัน
+                        } else {
+                            link.classList.remove('active'); // ลบ class active ออกจากลิงก์อื่น
+                        }
+                    });
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        </script>
 
 </body>
 
