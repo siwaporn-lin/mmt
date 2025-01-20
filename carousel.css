@@ -184,3 +184,18 @@ body,
 #navbar-placeholde {
     font-family: 'Noto Sans Thai', 'Roboto', sans-serif;
 }
+
+.navbar {
+  background-color: #e15a00 !important; /* สีส้ม */
+}
+
+.btn-outline-success {
+  color: #ffffff; /* สีตัวอักษร */
+  border-color: #ffffff; /* สีขอบ */
+}
+
+.btn-outline-success:hover {
+  background-color: #ffffff; /* พื้นหลังเมื่อ hover */
+  color: #ff6600; /* สีตัวอักษรเมื่อ hover */
+  border-color: #ffffff; /* สีขอบเมื่อ hover */
+}
